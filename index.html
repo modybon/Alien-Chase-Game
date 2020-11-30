@@ -32,7 +32,11 @@
             node.style.top = offsetY + 'px';});
 
         //3. Inside of the callback function of this event handler, create offset distances for X and Y from the mouse
-    
+    alien.addEventListener("mouseover",function(event){
+          event.target.style.left = (windowWidth - Math.floor(Math.random() * 860) + 100) + 50 + 'px';
+          event.target.style.top =   (windowHeight - Math.floor(Math.random() * 1000) + 100) + 50 + 'px';
+          alert("("+targetLeft+", "+targetTop+")\n");
+        })
     //Move the spaceship towards the mouse 
     //4. Get the image element & store it in a variable 
     //5. move the image by setting the coordinates of left & top refer to slide .  Ex. node.style.left = your coordinates calculation here.  
