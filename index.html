@@ -13,14 +13,24 @@
 
     <script>
       //Solution is 15 lines of code.  The instructions make it look like a longer assingment than it really it is.
-        var node = document.getElementById("spaceship1");
+         var node = document.getElementById("spaceship1");
         var alien = document.getElementById("alien");
-        
+        var windowHeight = window.innerHeight;
+        var windowWidth = window.innerWidth;
+        var offsetX;
+        var offsetY;
       //Event handler setup
       //1. Create an event handler on the window object for the load event 
-        
+        window.addEventListener("load",function(event){
+          console.log("page has loaded");
+        })
       //2. Create an event handler on the window object for the mousemove event  
-       
+       window.addEventListener("mousemove",function(event){
+            offsetX =  parseInt(event.pageX) + (Math.floor(Math.random()));
+            offsetY =  parseInt(event.pageY) + (Math.floor(Math.random()));
+            node.style.left = offsetX + 'px';
+            node.style.top = offsetY + 'px';});
+
         //3. Inside of the callback function of this event handler, create offset distances for X and Y from the mouse
     
     //Move the spaceship towards the mouse 
